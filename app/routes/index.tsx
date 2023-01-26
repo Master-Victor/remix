@@ -9,12 +9,14 @@ type Item = {
   name: string;
   maxQuantity: number;
   minQuantity: number;
+  quantity: number;
   pack?: [
     { itemName: string; itemDescription: string },
     { itemName: string; itemDescription: string },
     { itemName: string; itemDescription: string }
   ];
   priceUnit: string;
+  
 };
 
 export function loader() {
@@ -24,6 +26,7 @@ export function loader() {
       name: "My Christmas pack",
       maxQuantity: 50,
       minQuantity: 10,
+      quantity: 10,
       pack: [
         { itemName: "Cardboard box:", itemDescription: "container" },
         {
@@ -39,6 +42,7 @@ export function loader() {
       name: "Basic T-Shirt",
       maxQuantity: 20,
       minQuantity: 10,
+      quantity: 10,
       priceUnit: "13.50",
     },
     {
@@ -46,6 +50,7 @@ export function loader() {
       name: "Woman bottle",
       maxQuantity: 20,
       minQuantity: 10,
+      quantity: 10,
       priceUnit: "36.50",
     },
   ];
@@ -53,8 +58,6 @@ export function loader() {
 }
 export default function Index() {
   useItemStore.setState({ items: loader() });
-  // const bears = useItemStore((state:any) => state.items)
-  // console.log(bears)
   const matches900 = useMediaQuery("(min-width:900px)");
 
   return (

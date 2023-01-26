@@ -5,7 +5,7 @@ interface ItemState {
     name: string,
     maxQuantity: number,
     minQuantity: number,
-    quantity: 0,
+    quantity: number,
     pack?: [
       { itemName: string; itemDescription: string },
       { itemName: string; itemDescription: string },

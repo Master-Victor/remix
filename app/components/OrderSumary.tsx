@@ -14,17 +14,17 @@ const style = {
 const YouCart = () => {
   const items = useItemStore((state: any) => state.items);
   const matches900 = useMediaQuery("(min-width:900px)");
-
+  console.log(items)
   return (
     <Grid
       container
       style={
         matches900
-          ? { flexDirection: "row",paddingRight: "8vw" }
+          ? { flexDirection: "row", paddingRight: "8vw" }
           : {
               flexDirection: "row",
               width: "80vw",
-              paddingRight: "8vw"
+              paddingRight: "8vw",
             }
       }
       justifyContent={"space-between"}
