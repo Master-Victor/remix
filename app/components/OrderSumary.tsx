@@ -11,6 +11,16 @@ const style = {
   width: "100%",
   bgcolor: "background.paper",
 };
+
+function currencyFormatter(value : number) {
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    minimumFractionDigits: 2,
+    currency: 'USD',
+  }) 
+  return formatter.format(value)
+}
+
 const YouCart = () => {
   const items = useItemStore((state: any) => state.items);
   const matches900 = useMediaQuery("(min-width:900px)");
@@ -54,14 +64,13 @@ const YouCart = () => {
             </Typography>
             <Typography variant="subtitle1" align="right">
               <b>
-                ${" "}
-                {items.reduce(
+                {currencyFormatter(items.reduce(
                   (accumulator: number, currentValue: any) =>
                     Number(accumulator) +
                     Number(currentValue.priceUnit) *
                       Number(currentValue.quantity),
                   0
-                )}
+                ))}
               </b>
             </Typography>
           </Grid>
