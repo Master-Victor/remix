@@ -16,7 +16,7 @@ const YouCart = () => {
     <Grid container justifyContent={"space-between"}>
       <Typography variant="h6">
         <b>Your Cart</b>{" "}
-        <Typography variant="subtitle1" color="#6B737C" style={{ display: 'inline-block' }}>
+        <Typography variant="h6" color="#6B737C" style={{ display: 'inline-block' }}>
           ({items.length})
         </Typography>
       </Typography>
