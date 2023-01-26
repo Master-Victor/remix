@@ -13,8 +13,13 @@ const style = {
 const YouCart = () => {
   const items = useItemStore((state: any) => state.items);
   return (
-    <Grid container sx={{ flexDirection: "column" }}>
-      <Typography variant="h6"><b>Your Cart</b> <Typography variant="h6" color="#6B737C" sx={{display: 'inline-block'}} >({items.length})</Typography></Typography>
+    <Grid container justifyContent={"space-between"}>
+      <Typography variant="h6">
+        <b>Your Cart</b>{" "}
+        <Typography variant="subtitle1" color="#6B737C" style={{ display: 'inline-block' }}>
+          ({items.length})
+        </Typography>
+      </Typography>
       <List sx={style} component="nav" aria-label="mailbox folders">
         {items !== undefined &&
           items.map((item: any) => (
